@@ -14,8 +14,8 @@ export default function Header() {
   return (
     <header>
       <img src={reactImg} alt="Stylized atom" />
-      <h1>REACT</h1>
-      <p>{randomDesc} Benim Abim geceleri maymuna dönüşüyor!</p>
+      <h1>React Essentials</h1>
+      <p>{randomDesc} concepts every React developer must understand.</p>
     </header>
   );
 }
