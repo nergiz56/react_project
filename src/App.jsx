@@ -6,6 +6,11 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+
+  function handleSelected(){
+    console.log("tıklama olayı gerçekleşti");
+  }
+
   return (
     <div>
       <Header />
@@ -28,7 +33,7 @@ function App() {
           <menu>
             <TabButton>Components</TabButton>
             <TabButton>JSX</TabButton>
-            <TabButton>PROPS</TabButton>
+            <TabButton>PROPS</TabButton> 
             <TabButton>State</TabButton>
           </menu>
         </section>
