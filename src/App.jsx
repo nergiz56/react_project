@@ -1,16 +1,25 @@
+import { useState } from 'react';
+
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
 
+// tab-> sekme, 
+// kullandığın veri türlerine(const, let, var vesaylevesayle) dikkat etmen gerekiyor çünkü hata verme ihtimali yüksek!
 
 
 function App() {
 
+  const [selectedTopic, setSelectedTopic] = useState("Please click a buttom ");
+
   function handleSelect(selectedButton){
     //selectedBUttom=> 'Components', 'JSX','PROPS','State'
-    console.log(selectedButton);
+    setSelectedTopic(selectedButton);
+    //console.log(selectedTopic);
   }
+
+  console.log('App component executing');
 
   return (
     <div>
@@ -37,7 +46,7 @@ function App() {
             <TabButton onSelect={() => handleSelect ('props')} >PROPS</TabButton> 
             <TabButton onSelect={() => handleSelect ('state')} >State</TabButton>
           </menu>
-          Dinamik Bileşen
+          {selectedTopic}
         </section>
       </main>
     </div>
