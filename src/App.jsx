@@ -7,8 +7,9 @@ import TabButton from './components/TabButton.jsx';
 
 function App() {
 
-  function handleSelected(){
-    console.log("tıklama olayı gerçekleşti");
+  function handleSelect(selectedButton){
+    //selectedBUttom=> 'Components', 'JSX','PROPS','State'
+    console.log(selectedButton);
   }
 
   return (
@@ -31,11 +32,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>PROPS</TabButton> 
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect ('components')} >Components</TabButton>
+            <TabButton onSelect={() => handleSelect ('jsx')} >JSX</TabButton>
+            <TabButton onSelect={() => handleSelect ('props')} >PROPS</TabButton> 
+            <TabButton onSelect={() => handleSelect ('state')} >State</TabButton>
           </menu>
+          Dinamik Bileşen
         </section>
       </main>
     </div>
