@@ -11,7 +11,7 @@ import {EXAMPLES} from './data.js';
 
 function App() {
 
-  const [selectedTopic, setSelectedTopic] = useState();
+  const [selectedTopic, setSelectedTopic] = useState("");
 
   function handleSelect(selectedButton){ // handleSelect fonksiyonunun parametresi olarak tanımlanmladık
     //selectedBUttom=> 'Components', 'JSX','PROPS','State'
@@ -41,14 +41,18 @@ function App() {
         <section id='core-concepts'>
           <h2>Core Concepts</h2>
           <ul>
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+              ))}
+            {/*Bu kısmı yukarıda dinamik olarak ekleyelim!
             <CoreConcept
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description} 
               image={CORE_CONCEPTS[0].image}
             />
-            <CoreConcept {...CORE_CONCEPTS[1]} />
+             <CoreConcept {...CORE_CONCEPTS[1]} />
             <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
           </ul>
         </section>
         <section id="examples">
