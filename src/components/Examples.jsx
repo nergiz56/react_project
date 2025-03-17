@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { EXAMPLES } from "../data.js";
 import TabButton from './TabButton'; // doğru dosya yoluna göre düzelt
+import Section from "./Section.jsx";
 
 export default function Examples(){
 
-    const [selectedTopic, setSelectedTopic] = useState("");
+    const [selectedTopic, setSelectedTopic] = useState();
 
     function handleSelect(selectedButton){ // handleSelect fonksiyonunun parametresi olarak tanımlanmladık
       //selectedBUttom=> 'Components', 'JSX','PROPS','State'
@@ -26,16 +27,16 @@ export default function Examples(){
     }
 
     return(
-        <section id="examples">
-            <h2>Examples</h2>
+        <Section title="Examples" id="examples">
+           
             <menu>
             <TabButton isSelected={selectedTopic=== 'components'}
-            onSelect={() => handleSelect ('components')} >
+            onClick={() => handleSelect ('components')} >
                 Components
             </TabButton>
-            <TabButton isSelected={selectedTopic=== 'jsx'} onSelect={() => handleSelect ('jsx')} >JSX</TabButton>
-            <TabButton isSelected={selectedTopic=== 'props'} onSelect={() => handleSelect ('props')} >PROPS</TabButton> 
-            <TabButton isSelected={selectedTopic=== 'state'} onSelect={() => handleSelect ('state')} >State</TabButton>
+            <TabButton isSelected={selectedTopic=== 'jsx'}  onClick={() => handleSelect ('jsx')} >JSX</TabButton>
+            <TabButton isSelected={selectedTopic=== 'props'}  onClick={() => handleSelect ('props')} >PROPS</TabButton> 
+            <TabButton isSelected={selectedTopic=== 'state'}  onClick={() => handleSelect ('state')} >State</TabButton>
             </menu>
             {/*1. yazım şekli
             {!selectedTopic ? (<p>Please select a topic.</p>): (
@@ -61,7 +62,7 @@ export default function Examples(){
                 </div> 
             )} */}
             {tabContent}
-        </section>
+        </Section>
 
     )
     

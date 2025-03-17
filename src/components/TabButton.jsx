@@ -1,4 +1,4 @@
-export default function TabButton ({ onSelect, children, isSelected}){
+export default function TabButton ({children, isSelected, ...props}){
 // fonksiyon içinde fonksiyon kullanabiliriz!
 // Evet, onClick bir butona tıklanınca belirli bir fonksiyonun çalışmasını sağlar.
 // isSelected -> seçili olan butonumuz
@@ -6,7 +6,7 @@ export default function TabButton ({ onSelect, children, isSelected}){
 
     return(
         <li>
-            <button className={ isSelected ? 'active' : undefined} onClick={onSelect}>{children}</button>
+            <button className={ isSelected ? 'active' : undefined} {...props}>{children} </button>
         </li>
 
     );
